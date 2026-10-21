@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shanu's Bridal Studio & Academy | Arani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush: '#FDF2F4',
+                        'blush-light': '#FFF9FA',
+                        'rose-gold': '#C5A880',
+                        'rose-gold-dark': '#A88B62',
+                        charcoal: '#222222',
+                        'charcoal-light': '#2C2C2C',
+                        ivory: '#FAF9F6',
+                        accent: '#E0AFA0'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF9F6;
+            color: #222222;
+            -webkit-tap-highlight-color: transparent;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #C5A880 0%, #DFCCB0 50%, #A88B62 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Hide scrollbar for clean app experience */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Mobile App Frame Shadow for Desktop Preview */
+        @media (min-width: 768px) {
+            .app-container {
+                max-width: 440px;
+                height: 880px;
+                margin: 30px auto;
+                border-radius: 40px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+                border: 10px solid #222222;
+                overflow: hidden;
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body class="bg-ivory text-charcoal flex justify-center items-center min-h-screen">
+
+    <!-- App Shell Wrapper (Optimized for Mobile & Desktop simulated phone frame) -->
+    <div class="app-container w-full h-screen md:h-[880px] bg-ivory flex flex-col relative overflow-hidden">
+
+        <!-- Top Header Bar -->
+        <header class="flex-none bg-ivory/95 backdrop-blur-md border-b border-rose-gold/20 px-5 py-4 flex items-center justify-between z-30">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-full bg-rose-gold/10 border border-rose-gold flex items-center justify-center text-rose-gold-dark font-serif font-bold text-lg">
+                    S
+                </div>
+                <div>
+                    <h1 class="font-serif text-lg font-bold text-charcoal leading-none">Shanu's Studio</h1>
+                    <span class="text-[9px] tracking-[0.2em] uppercase text-rose-gold-dark font-semibold">Arani</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="tel:9843000000" class="w-9 h-9 rounded-full bg-blush border border-rose-gold/30 flex items-center justify-center text-rose-gold-dark hover:bg-rose-gold hover:text-ivory transition-colors">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                </a>
+                <button onclick="switchTab('booking')" class="bg-charcoal text-ivory text-xs px-3.5 py-2 rounded-full font-semibold shadow-md">
+                    Book
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Content Area -->
+        <main id="main-content" class="flex-1 overflow-y-auto pb-24 no-scrollbar">
+
+            <!-- TAB 1: HOME -->
+            <div id="tab-home" class="tab-pane space-y-6 p-5">
+                <!-- Hero Banner -->
+                <div class="relative rounded-3xl overflow-hidden bg-blush p-6 border border-rose-gold/30 shadow-lg">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A880_1px,transparent_1px)] [background-size:12px_12px]"></div>
+                    <div class="relative z-10 space-y-4">
+                        <span class="inline-flex items-center space-x-1.5 bg-rose-gold/15 border border-rose-gold/30 px-3 py-1 rounded-full text-rose-gold-dark text-[10px] font-bold tracking-widest uppercase">
+                            <i class="fa-solid fa-crown text-[9px]"></i>
+                            <span>Arani's Luxury Bridal Suite</span>
+                        </span>
+                        <h2 class="font-serif text-3xl font-bold text-charcoal leading-tight">
+                            Where Royal Heritage Meets <span class="gold-gradient italic">Modern Glamour</span>
+                        </h2>
+                        <p class="text-xs text-gray-600 font-light leading-relaxed">
+                            Bespoke South Indian bridal makeup, HD airbrush, traditional Kanjeevaram styling, and custom Aari embroidery in Arani.
+                        </p>
+                        <div class="pt-2 flex items-center space-x-3">
+                            <button onclick="switchTab('booking')" class="flex-1 bg-charcoal text-ivpy py-3 rounded-2xl text-xs font-semibold tracking-wide hover:bg-rose-gold-dark transition-all text-center text-ivory shadow-md">
+                                Reserve Your Date
+                            </button>
+                            <button onclick="switchTab('services')" class="px-4 py-3 bg-ivory border border-rose-gold/40 text-charcoal text-xs font-semibold rounded-2xl hover:bg-blush transition-all">
+                                Packages
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="bg-blush/60 p-4 rounded-2xl text-center border border-rose-gold/20">
+                        <span class="font-serif text-xl font-bold text-charcoal block">500+</span>
+                        <span class="text-[10px] uppercase text-gray-500 font-semibold tracking-wider">Brides</span>
+                    </div>
+                    <div class="bg-blush/60 p-4 rounded-2xl text-center border border-rose-gold/20">
+                        <span class="font-serif text-xl font-bold text-charcoal block">8+ Yrs</span>
+                        <span class="text-[10px] uppercase text-gray-500 font-semibold tracking-wider">Experience</span>
+                    </div>
+                    <div class="bg-blush/60 p-4 rounded-2xl text-center border border-rose-gold/20">
+                        <span class="font-serif text-xl font-bold text-charcoal block">100%</span>
+                        <span class="text-[10px] uppercase text-gray-500 font-semibold tracking-wider">Delighted</span>
+                    </div>
+                </div>
+
+                <!-- Featured Services Carousel / Cards -->
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-serif text-lg font-bold text-charcoal">Signature Offerings</h3>
+                        <button onclick="switchTab('services')" class="text-xs text-rose-gold-dark font-semibold">View All</button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div onclick="switchTab('services')" class="bg-blush/40 p-4 rounded-2xl border border-rose-gold/20 flex items-center space-x-4 cursor-pointer hover:border-rose-gold transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-rose-gold/20 flex items-center justify-center text-rose-gold-dark text-lg flex-shrink-0">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-sm text-charcoal">HD & Airbrush Bridal Makeup</h4>
+                                <p class="text-[11px] text-gray-500">Waterproof 24-hr flawless makeup finish.</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-xs text-gray-400 pr-2"></i>
+                        </div>
+
+                        <div onclick="switchTab('services')" class="bg-blush/40 p-4 rounded-2xl border border-rose-gold/20 flex items-center space-x-4 cursor-pointer hover:border-rose-gold transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-rose-gold/20 flex items-center justify-center text-rose-gold-dark text-lg flex-shrink-0">
+                                <i class="fa-solid fa-shirt"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-sm text-charcoal">Aari Work Blouses & Draping</h4>
+                                <p class="text-[11px] text-gray-500">Intricate Zardozi & silk saree pleating.</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-xs text-gray-400 pr-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Testimonial Card -->
+                <div class="bg-charcoal text-ivory p-5 rounded-3xl space-y-3 relative overflow-hidden">
+                    <div class="flex text-rose-gold text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs italic leading-relaxed text-gray-200">
+                        "Shanu made my wedding in Arani look like a dream! The traditional temple jewellery styling and makeup lasted all day without a single smudge."
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <div class="w-8 h-8 rounded-full bg-rose-gold text-charcoal font-bold text-xs flex items-center justify-center">P</div>
+                        <div>
+                            <h4 class="font-bold text-xs">Priya Dharshini</h4>
+                            <p class="text-[10px] text-gray-400">Arani Bride</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: SERVICES (Interactive Package Selector) -->
+            <div id="tab-services" class="tab-pane hidden space-y-5 p-5">
+                <div class="space-y-1">
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-rose-gold-dark uppercase">Bespoke Pricing</span>
+                    <h2 class="font-serif text-2xl font-bold text-charcoal">Interactive Package Selector</h2>
+                    <p class="text-xs text-gray-600 font-light">Select your preferred bridal tier to estimate your package.</p>
+                </div>
+
+                <!-- Package Selection Cards -->
+                <div class="space-y-3">
+                    <div onclick="selectPackage('HD Bridal Package', 14000)" class="pkg-card bg-blush/60 p-4 rounded-2xl border-2 border-rose-gold cursor-pointer transition-all shadow-sm" id="pkg-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="font-serif font-bold text-sm text-charcoal">HD Bridal Package</h3>
+                            <span class="text-xs font-bold text-rose-gold-dark">₹14,000</span>
+                        </div>
+                        <p class="text-[11px] text-gray-600 mb-2">Complete HD makeup, premium eye lashes, hair styling, saree pleating & flower gajra.</p>
+                        <span class="inline-block text-[10px] bg-rose-gold/20 text-rose-gold-dark px-2 py-0.5 rounded-md font-semibold">Most Popular</span>
+                    </div>
+
+                    <div onclick="selectPackage('Airbrush Luxury Package', 18000)" class="pkg-card bg-ivory p-4 rounded-2xl border border-rose-gold/30 cursor-pointer transition-all shadow-sm" id="pkg-2">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="font-serif font-bold text-sm text-charcoal">Airbrush Luxury Package</h3>
+                            <span class="text-xs font-bold text-rose-gold-dark">₹18,000</span>
+                        </div>
+                        <p class="text-[11px] text-gray-600 mb-2">Waterproof 24-hour HD Airbrush makeup, luxury skincare prep, designer hairstyle & draping.</p>
+                        <span class="inline-block text-[10px] bg-charcoal text-ivory px-2 py-0.5 rounded-md font-semibold">VIP Choice</span>
+                    </div>
+
+                    <div onclick="selectPackage('Reception & Sangeet Glam', 9500)" class="pkg-card bg-ivory p-4 rounded-2xl border border-rose-gold/30 cursor-pointer transition-all shadow-sm" id="pkg-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="font-serif font-bold text-sm text-charcoal">Reception & Sangeet Glam</h3>
+                            <span class="text-xs font-bold text-rose-gold-dark">₹9,500</span>
+                        </div>
+                        <p class="text-[11px] text-gray-600 mb-2">Contemporary party makeup, glitter eye glam, soft curls or sleek bun, outfit styling.</p>
+                    </div>
+
+                    <div onclick="selectPackage('Professional Academy Course', 25000)" class="pkg-card bg-ivory p-4 rounded-2xl border border-rose-gold/30 cursor-pointer transition-all shadow-sm" id="pkg-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="font-serif font-bold text-sm text-charcoal">Professional Academy Course</h3>
+                            <span class="text-xs font-bold text-rose-gold-dark">₹25,000</span>
+                        </div>
+                        <p class="text-[11px] text-gray-600 mb-2">1-Month intensive makeup artistry, hairstyling, and saree draping with certification.</p>
+                    </div>
+                </div>
+
+                <!-- Package Summary Box -->
+                <div class="bg-charcoal text-ivory p-4 rounded-2xl space-y-3">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-gray-400">Selected Package:</span>
+                        <span id="summary-pkg-name" class="font-bold text-rose-gold">HD Bridal Package</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xs border-t border-gray-700 pt-2">
+                        <span class="text-gray-400">Estimated Total:</span>
+                        <span id="summary-pkg-price" class="font-serif font-bold text-base text-ivory">₹14,000</span>
+                    </div>
+                    <button onclick="proceedWithPackage()" class="w-full bg-rose-gold text-charcoal py-3 rounded-xl text-xs font-bold tracking-wide hover:bg-rose-gold-dark hover:text-ivory transition-all shadow-md">
+                        Proceed to Book This Package
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB 3: PORTFOLIO GALLERY -->
+            <div id="tab-portfolio" class="tab-pane hidden space-y-4 p-5">
+                <div class="space-y-1">
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-rose-gold-dark uppercase">Real Brides</span>
+                    <h2 class="font-serif text-2xl font-bold text-charcoal">Look Gallery</h2>
+                    <p class="text-xs text-gray-600 font-light">Filter through our signature work across categories.</p>
+                </div>
+
+                <!-- Gallery Filter Pills -->
+                <div class="flex space-x-2 overflow-x-auto no-scrollbar pb-1">
+                    <button onclick="filterGallery('all', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-charcoal text-ivory whitespace-nowrap">All</button>
+                    <button onclick="filterGallery('bridal', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-blush border border-rose-gold/30 text-charcoal whitespace-nowrap">Bridal Makeup</button>
+                    <button onclick="filterGallery('saree', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-blush border border-rose-gold/30 text-charcoal whitespace-nowrap">Saree Draping</button>
+                    <button onclick="filterGallery('hair', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-blush border border-rose-gold/30 text-charcoal whitespace-nowrap">Hair Styling</button>
+                    <button onclick="filterGallery('reception', this)" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-blush border border-rose-gold/30 text-charcoal whitespace-nowrap">Reception</button>
+                </div>
+
+                <!-- Gallery Image Grid -->
+                <div class="grid grid-cols-2 gap-3" id="gallery-grid">
+                    <div class="gallery-item bridal hair relative h-44 rounded-2xl overflow-hidden shadow-md bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1594552072238-b8a3da72ae9a?auto=format&fit=crop&w=500&q=80" alt="Bridal Makeup" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent flex items-end p-3">
+                            <span class="text-ivory text-[11px] font-serif font-bold">Traditional Muhurtham</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item reception hair relative h-44 rounded-2xl overflow-hidden shadow-md bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=500&q=80" alt="Reception Glam" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent flex items-end p-3">
+                            <span class="text-ivory text-[11px] font-serif font-bold">Reception Shimmer Glam</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item saree bridal relative h-44 rounded-2xl overflow-hidden shadow-md bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" alt="Saree Draping" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent flex items-end p-3">
+                            <span class="text-ivory text-[11px] font-serif font-bold">Kanjeevaram Pleating</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item hair relative h-44 rounded-2xl overflow-hidden shadow-md bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=500&q=80" alt="Hair Styling" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent flex items-end p-3">
+                            <span class="text-ivory text-[11px] font-serif font-bold">Floral Gajra Bun</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: BOOKING FORM -->
+            <div id="tab-booking" class="tab-pane hidden space-y-4 p-5">
+                <div class="space-y-1">
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-rose-gold-dark uppercase">Instant Reservation</span>
+                    <h2 class="font-serif text-2xl font-bold text-charcoal">Book Consultation</h2>
+                    <p class="text-xs text-gray-600 font-light">Secure your wedding date in Arani instantly.</p>
+                </div>
+
+                <!-- Success Confirmation Box (Hidden initially) -->
+                <div id="success-box" class="hidden bg-emerald-50 border border-emerald-300 text-emerald-900 p-4 rounded-2xl space-y-2 text-center animate-fade-in">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-lg">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-base">Booking Requested Successfully!</h3>
+                    <p id="success-details" class="text-xs text-emerald-700 font-light">We have received your request. Shanu's Studio will WhatsApp you shortly.</p>
+                    <button onclick="resetBookingForm()" class="mt-2 bg-emerald-700 text-ivory px-4 py-2 rounded-xl text-xs font-semibold">Book Another</button>
+                </div>
+
+                <!-- Booking Form -->
+                <form id="booking-form" onsubmit="submitBooking(event)" class="space-y-3 bg-blush/40 p-4 rounded-2xl border border-rose-gold/20">
+                    <div>
+                        <label class="block text-[11px] font-semibold text-charcoal uppercase tracking-wider mb-1">Full Name *</label>
+                        <input type="text" id="b-name" required placeholder="Enter your name" class="w-full bg-ivory border border-rose-gold/30 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-rose-gold-dark">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-semibold text-charcoal uppercase tracking-wider mb-1">Mobile Number *</label>
+                        <input type="tel" id="b-phone" required placeholder="10-digit mobile number" class="w-full bg-ivory border border-rose-gold/30 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-rose-gold-dark">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-semibold text-charcoal uppercase tracking-wider mb-1">Selected Package / Service *</label>
+                        <select id="b-service" required class="w-full bg-ivory border border-rose-gold/30 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-rose-gold-dark">
+                            <option value="HD Bridal Package">HD Bridal Package (₹14,000)</option>
+                            <option value="Airbrush Luxury Package">Airbrush Luxury Package (₹18,000)</option>
+                            <option value="Reception & Sangeet Glam">Reception & Sangeet Glam (₹9,500)</option>
+                            <option value="Professional Academy Course">Professional Academy Course (₹25,000)</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[11px] font-semibold text-charcoal uppercase tracking-wider mb-1">Event Date *</label>
+                            <input type="date" id="b-date" required class="w-full bg-ivory border border-rose-gold/30 rounded-xl px-3 py-2.5 text-xs focus:outline-none focus:border-rose-gold-dark">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-charcoal uppercase tracking-wider mb-1">Venue / City</label>
+                            <input type="text" id="b-venue" placeholder="e.g. Arani Mandapam" class="w-full bg-ivory border border-rose-gold/30 rounded-xl px-3 py-2.5 text-xs focus:outline-none focus:border-rose-gold-dark">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-semibold text-charcoal uppercase tracking-wider mb-1">Special Notes</label>
+                        <textarea id="b-notes" rows="2" placeholder="Outfit colors, guest makeup required, etc." class="w-full bg-ivory border border-rose-gold/30 rounded-xl px-3.5 py-2 text-xs focus:outline-none focus:border-rose-gold-dark"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-charcoal text-ivory py-3.5 rounded-xl text-xs font-bold tracking-wide hover:bg-rose-gold-dark transition-all shadow-md flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calendar-check text-rose-gold"></i>
+                        <span>Confirm Consultation Booking</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- TAB 5: CONTACT & LOCATION -->
+            <div id="tab-contact" class="tab-pane hidden space-y-4 p-5">
+                <div class="space-y-1">
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-rose-gold-dark uppercase">Get in Touch</span>
+                    <h2 class="font-serif text-2xl font-bold text-charcoal">Studio & Contact</h2>
+                    <p class="text-xs text-gray-600 font-light">Visit our luxurious studio in Arani.</p>
+                </div>
+
+                <div class="bg-blush/60 p-4 rounded-2xl border border-rose-gold/20 space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-rose-gold/20 flex items-center justify-center text-rose-gold-dark flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-location-dot text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-charcoal">Studio Address</h4>
+                            <p class="text-[11px] text-gray-600 mt-0.5">Near Vellore Road & Market Road, Arani, Tamil Nadu - 632301</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-rose-gold/20 flex items-center justify-center text-rose-gold-dark flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-phone text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-charcoal">Phone / WhatsApp</h4>
+                            <p class="text-[11px] text-gray-600 mt-0.5">+91 98430 XXXXX / +91 94421 XXXXX</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-rose-gold/20 flex items-center justify-center text-rose-gold-dark flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-clock text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-charcoal">Working Hours</h4>
+                            <p class="text-[11px] text-gray-600 mt-0.5">Monday - Sunday: 9:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="tel:9843000000" class="bg-charcoal text-ivory py-3 rounded-xl text-xs font-bold text-center flex items-center justify-center space-x-2 shadow-md">
+                        <i class="fa-solid fa-phone text-rose-gold"></i>
+                        <span>Call Studio</span>
+                    </a>
+                    <a href="https://wa.me/919843000000" target="_blank" class="bg-emerald-600 text-ivory py-3 rounded-xl text-xs font-bold text-center flex items-center justify-center space-x-2 shadow-md">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="flex-none bg-ivory/95 backdrop-blur-md border-t border-rose-gold/20 px-3 py-2 flex justify-around items-center z-40 absolute bottom-0 left-0 right-0">
+            <button onclick="switchTab('home')" class="nav-btn flex flex-col items-center space-y-1 py-1 px-3 text-rose-gold-dark" id="btn-home">
+                <i class="fa-solid fa-house text-base"></i>
+                <span class="text-[10px] font-semibold">Home</span>
+            </button>
+            <button onclick="switchTab('services')" class="nav-btn flex flex-col items-center space-y-1 py-1 px-3 text-gray-400 hover:text-charcoal" id="btn-services">
+                <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
+                <span class="text-[10px] font-semibold">Services</span>
+            </button>
+            <button onclick="switchTab('portfolio')" class="nav-btn flex flex-col items-center space-y-1 py-1 px-3 text-gray-400 hover:text-charcoal" id="btn-portfolio">
+                <i class="fa-solid fa-images text-base"></i>
+                <span class="text-[10px] font-semibold">Portfolio</span>
+            </button>
+            <button onclick="switchTab('booking')" class="nav-btn flex flex-col items-center space-y-1 py-1 px-3 text-gray-400 hover:text-charcoal" id="btn-booking">
+                <i class="fa-solid fa-calendar-days text-base"></i>
+                <span class="text-[10px] font-semibold">Booking</span>
+            </button>
+            <button onclick="switchTab('contact')" class="nav-btn flex flex-col items-center space-y-1 py-1 px-3 text-gray-400 hover:text-charcoal" id="btn-contact">
+                <i class="fa-solid fa-location-dot text-base"></i>
+                <span class="text-[10px] font-semibold">Contact</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <!-- App Logic Script -->
+    <script>
+        // Tab Switching Function
+        function switchTab(tabId) {
+            // Hide all tabs
+            const panes = document.querySelectorAll('.tab-pane');
+            panes.forEach(pane => pane.classList.add('hidden'));
+
+            // Show target tab
+            const target = document.getElementById(`tab-${tabId}`);
+            if (target) target.classList.remove('hidden');
+
+            // Reset nav button states
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('text-rose-gold-dark');
+                btn.classList.add('text-gray-400');
+            });
+
+            // Highlight active nav button
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-gray-400');
+                activeBtn.classList.add('text-rose-gold-dark');
+            }
+
+            // Scroll top of content
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) mainContent.scrollTop = 0;
+        }
+
+        // Package Selector Logic
+        let selectedPackageName = 'HD Bridal Package';
+        let selectedPackagePrice = 14000;
+
+        function selectPackage(name, price) {
+            selectedPackageName = name;
+            selectedPackagePrice = price;
+
+            // Highlight selected card
+            const cards = document.querySelectorAll('.pkg-card');
+            cards.forEach(card => {
+                card.classList.remove('border-2', 'border-rose-gold', 'bg-blush/60');
+                card.classList.add('border', 'border-rose-gold/30', 'bg-ivory');
+            });
+
+            event.currentTarget.classList.remove('border', 'border-rose-gold/30', 'bg-ivory');
+            event.currentTarget.classList.add('border-2', 'border-rose-gold', 'bg-blush/60');
+
+            // Update summary
+            document.getElementById('summary-pkg-name').textContent = name;
+            document.getElementById('summary-pkg-price').textContent = `₹${price.toLocaleString('en-IN')}`;
+        }
+
+        function proceedWithPackage() {
+            // Pre-select service in booking form and switch tab
+            const serviceSelect = document.getElementById('b-service');
+            if (serviceSelect) {
+                for (let i = 0; i < serviceSelect.options.length; i++) {
+                    if (serviceSelect.options[i].text.includes(selectedPackageName)) {
+                        serviceSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            switchTab('booking');
+        }
+
+        // Gallery Filter Logic
+        function filterGallery(category, btnElement) {
+            // Update filter pill styles
+            const pills = document.querySelectorAll('.gallery-filter-btn');
+            pills.forEach(p => {
+                p.classList.remove('bg-charcoal', 'text-ivory');
+                p.classList.add('bg-blush', 'border', 'border-rose-gold/30', 'text-charcoal');
+            });
+            btnElement.classList.remove('bg-blush', 'border', 'border-rose-gold/30', 'text-charcoal');
+            btnElement.classList.add('bg-charcoal', 'text-ivory');
+
+            // Filter items
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Booking Form Submission & Success Message
+        function submitBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('b-name').value;
+            const service = document.getElementById('b-service').value;
+            const date = document.getElementById('b-date').value;
+
+            // Show success box
+            const successBox = document.getElementById('success-box');
+            const bookingForm = document.getElementById('booking-form');
+            const successDetails = document.getElementById('success-details');
+
+            successDetails.textContent = `Thank you ${name}! Your consultation request for ${service} on ${date} is confirmed. Shanu's Studio will contact you soon.`;
+            
+            bookingForm.classList.add('hidden');
+            successBox.classList.remove('hidden');
+        }
+
+        function resetBookingForm() {
+            document.getElementById('booking-form').reset();
+            document.getElementById('booking-form').classList.remove('hidden');
+            document.getElementById('success-box').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
